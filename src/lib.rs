@@ -213,6 +213,7 @@ fn expand_wrapper(inner_test: &Tokens, wrappee: &ItemFn) -> TokenStream {
       // example.
       // The alternative would be to use fully qualified call syntax in
       // all initialization code, but that's much harder to control.
+      #[cfg(test)]
       mod init {
         pub fn init() {
           #logging_init
